@@ -8,7 +8,7 @@ MIN_LIMIT = 0
 MAX_LIMIT = 100000
 
 if n > MIN_LIMIT and n < MAX_LIMIT:
-    for i in range(2, n/2):
+    for i in range(2, int(n ** 0.5)):
         if n % i == 0:
             divider_count += 1
     
