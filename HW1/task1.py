@@ -13,10 +13,10 @@ if a > b + c or b > a + c or c > a + b:
 else:
     if a == b and a == c:
         print("Треугольник равносторонний")
-    elif a == b or a == c or b == c:
-        print("Треугольник равнобедренный")
-    elif a != b and a !=c and b != c:
+    elif a != b != c:
         print("Треугольник разносторонний")
+    else:
+        print("Треугольник равнобедренный")
 
 
 
