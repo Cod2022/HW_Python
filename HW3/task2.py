@@ -13,5 +13,18 @@ string = "Высокоуровневый язык программировани
         более высокое потребление памяти написанных на нём программ по сравнению с аналогичным кодом, \
         написанным на компилируемых языках, таких как C или C++[25][27]."
 
-new_string = string.replace('.','').replace(',', '').replace('[', ' ').replace(']', ' ').split()
-print(new_string)
+words_list = string.replace('.','').replace(',', '').replace('[', ' ').replace(']', ' ').lower().split()
+print(words_list)
+
+dict_words = {}
+
+for frequency, word in enumerate(words_list, start=1):
+    word_count = words_list.count(word)
+    dict_words[word] = word_count
+
+sorted_dict = dict(sorted(dict_words.items(), key=lambda x:x[1], reverse=True))
+
+print('10 самых частых слов текста и количество их появлений в тексте: ')
+for word in list(sorted_dict)[0:10]:
+    print(f'"{word}": {sorted_dict.get(word)}')
+    
