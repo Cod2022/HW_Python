@@ -17,10 +17,11 @@ new_string = ''
 for word in string:
     if word.isalpha() or word == ' ':
         new_string += word
+    w_list = new_string.split()
 
 dict_words = {}
 
-for frequency, word in enumerate(new_string, start=1):
+for frequency, word in enumerate(w_list, start=1):
     word_count = new_string.count(word)
     dict_words[word] = word_count
 
