@@ -25,6 +25,6 @@ for frequency, word in enumerate(words_list, start=1):
 sorted_dict = dict(sorted(dict_words.items(), key=lambda x:x[1], reverse=True))
 
 print('10 самых частых слов и количество их появлений в тексте: ')
-for word in list(sorted_dict)[0:10]:
+for word in list(sorted_dict)[:10]:
     print(f'"{word}": {sorted_dict.get(word)}')
     
