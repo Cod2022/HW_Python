@@ -17,13 +17,11 @@ new_string = ''
 for word in string:
     if word.isalpha() or word == ' ':
         new_string += word
-print(new_string)
-print(words_list)
 
 dict_words = {}
 
-for frequency, word in enumerate(words_list, start=1):
-    word_count = words_list.count(word)
+for frequency, word in enumerate(new_string, start=1):
+    word_count = new_string.count(word)
     dict_words[word] = word_count
 
 sorted_dict = dict(sorted(dict_words.items(), key=lambda x:x[1], reverse=True))
