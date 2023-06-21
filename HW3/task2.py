@@ -13,7 +13,11 @@ string = "Высокоуровневый язык программировани
         более высокое потребление памяти написанных на нём программ по сравнению с аналогичным кодом, \
         написанным на компилируемых языках, таких как C или C++[25][27]."
 
-words_list = string.replace('.','').replace(',', '').replace('[', ' ').replace(']', ' ').lower().split()
+new_string = ''
+for word in string:
+    if word.isalpha() or word == ' ':
+        new_string += word
+print(new_string)
 print(words_list)
 
 dict_words = {}
