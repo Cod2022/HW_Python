@@ -7,7 +7,7 @@ ENTERS = 2
 result_list = []
 
 for item in set(my_list):
-    if my_list.count(item) == ENTERS:
+    if my_list.count(item) >= ENTERS:
             result_list.append(item)
 
 print(result_list)
