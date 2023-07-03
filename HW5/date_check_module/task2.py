@@ -24,7 +24,9 @@ MAX_YEAR = 9999
 
 FEBRARY = 2
 
-date = "31.12.2024"
+# date = "31.12.2024"
+
+__all__ = ['date_validation', 'terminal_date_input']
 
 def date_validation(date: str):
     day, month, year = map(int, (date.split('.')))
