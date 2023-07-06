@@ -11,7 +11,7 @@
 
 import os
 
-def file_rename(new_name, old_extension, new_extension): # rename_dir_files
+def rename_dir_files(new_name, old_extension, new_extension): # file_rename module
     os.chdir('HW7/task2')
     files_list = [_ for _ in os.listdir() if _.endswith(old_extension)]
     for num, file in enumerate(files_list, 1):
@@ -19,4 +19,4 @@ def file_rename(new_name, old_extension, new_extension): # rename_dir_files
         new_name_extension = f'{file.strip(strip_old_ext)}_{new_name}_{str(num)}.{new_extension}'
         os.rename(file, new_name_extension)
 
-file_rename('hello', 'txt', 'pdf')
+rename_dir_files('hello', 'txt', 'pdf')
