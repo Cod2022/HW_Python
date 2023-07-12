@@ -14,7 +14,6 @@ MAX_NUMBER = 100
 NUMBER_OF_NUMBERS = 3
 
 
-
 def write_csv_nums(name: str):
     with open(name, 'w', encoding='utf-8', newline='') as f_write:
         csv_write = csv.writer(f_write)
@@ -22,12 +21,7 @@ def write_csv_nums(name: str):
             res2 = [random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(0, NUMBER_OF_NUMBERS)] 
             csv_write.writerow(res2)
 
-def read_csv_nums(name: str):
-    with open(name, 'r', encoding='utf-8', newline='') as f_read:
-        csv_read = csv.reader(f_read)
-        for line in csv_read:
-            int_list = list(map(int, line))
-            yield int_list
+
 
 def read_csv(func: Callable):
     def wrapper(*args, **kwargs):
@@ -42,7 +36,7 @@ def read_csv(func: Callable):
 
 
 @read_csv
-def discriminant_count(lst: list):
+def discriminant_count(lst: list = None):
     a, b, c = lst
     print(f'Числа: {a}, {b}, {c}')
     discr = b ** 2 - 4 * a * c
@@ -56,11 +50,9 @@ def discriminant_count(lst: list):
         print("x = %.2f" % x)
     else:
         print("Корней нет")
-    
 
-# write_csv_nums('nums_csv.csv')
-# my_iter = iter(read_csv_nums('nums_csv.csv'))
-# for line in my_iter:
-#     discriminant_count((next(my_iter)))
-lst = [1, 2, 3]
-discriminant_count(lst)
+   
+write_csv_nums('nums_csv.csv')
+discriminant_count()
+
+
