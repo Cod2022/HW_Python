@@ -18,7 +18,7 @@ def write_csv_nums(name: str):
     with open(name, 'w', encoding='utf-8', newline='') as f_write:
         csv_write = csv.writer(f_write)
         for _ in range(0, NUMBER_OF_ROWS):
-            res2 = [random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(0, NUMBER_OF_NUMBERS) if _ != 0] 
+            res2 = [random.choice((random.randint(MIN_NUMBER, -1), random.randint(1, MAX_NUMBER))) for i in range(0, NUMBER_OF_NUMBERS)]
             csv_write.writerow(res2)
 
 
